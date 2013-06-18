@@ -14,6 +14,10 @@ public class Deck {
         return this;
     }
 
+    public List<Card> cards() {
+        return deck;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Deck{");
