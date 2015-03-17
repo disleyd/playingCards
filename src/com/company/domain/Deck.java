@@ -3,7 +3,9 @@ package com.company.domain;
 import java.util.*;
 
 public class Deck {
-    private List<Card> deck = new ArrayList<Card>(52);
+    private static final int NUMBER_OF_CARDS_IN_A_DECK = 52;
+
+    private List<Card> deck = new ArrayList<Card>(NUMBER_OF_CARDS_IN_A_DECK);
 
     public Deck() {
         Collections.addAll(deck, Card.values());
@@ -19,8 +21,8 @@ public class Deck {
         List<Card> copyOfFullDeck = new ArrayList<Card>(deck);
         List<Card> shuffledDeck = new ArrayList<Card>();
 
-        while (numberOfCardsShuffled < 52) {
-            int randomCard = randomNumberGenerator.nextInt(52);
+        while (numberOfCardsShuffled < NUMBER_OF_CARDS_IN_A_DECK) {
+            int randomCard = randomNumberGenerator.nextInt(NUMBER_OF_CARDS_IN_A_DECK);
 
             if (copyOfFullDeck.get(randomCard) != null) {
                 shuffledDeck.add(copyOfFullDeck.get(randomCard));
